@@ -96,7 +96,7 @@ $.ajax({
         $("#title_to_update").val(result.data.title);
         $("#old_image").val(result.data.image);
         $("#cat_id").val(result.data.id);
-        $("#current_image").attr('src', '{{ asset('images') }}/' + result.data.image);
+        $("#current_image").attr('src', '/images/' + result.data.image);
         
     },
 });
@@ -123,7 +123,7 @@ $.ajax({
         $('#updateCatForm')[0].reset();
         $("#current_image").attr('src', '');
         trRow.find(".category_title").html(result.data.title);
-        trRow.find(".category_image").html("<img src='{{ asset('images') }}/" +
+        trRow.find(".category_image").html("<img src='/images/" +
             result.data.image + "' width='100px'>");
         trRow.find(".category_active").html(result.data.active);
         $('#update-errors').html('');

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Management\Dashboard;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Service\Dashboard\GetTotalData;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(GetTotalData $getTotalData)
     {
-        return view('management.dashboard.index');
+        return $getTotalData->apply();
     }
 }

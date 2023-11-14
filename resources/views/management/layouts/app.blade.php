@@ -17,7 +17,7 @@
     <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script>
         const BASE_URL = "{{ url('/') }}";
-        </script>
+    </script>
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
@@ -50,6 +50,9 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="/management/food">Food</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/management/orders">Orders</a>
                         </li>
                     </ul>
                     

@@ -106,8 +106,7 @@ $(document).on("click", ".update_btn", function() {
             $("#price_to_update").val(result.data.price);
             $("#description_to_update").val(result.data.description);
             $("#old_image").val(result.data.image);
-            $("#current_image").attr('src', '{{ asset('images') }}/' + result.data.image);
-
+            $("#current_image").attr('src', '/images/' + result.data.image);
         },
     });
 });
@@ -134,8 +133,8 @@ $(document).on("submit", "#updateFoodForm", function(e) {
             trRow.find(".food_title").html(result.data.title);
             trRow.find(".food_price").html(result.data.price);
             trRow.find(".food_description").html(result.data.description);
-            trRow.find(".food_image").html("<img src='{{ asset('images') }}/" +
-                result.data.image + "' width='100px'>");
+            trRow.find(".food_image").html("<img src='/images/" +
+                result.data.image + "' width='50px'>");
             trRow.find(".food_active").html(result.data.active);
             $('#validation_errors_update').html('');
             $("#action_message").html(result.message);

@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::post('/management/category/edit', [CategoryController::class, 'edit']);
     Route::post('/management/category/update/{id}', [CategoryController::class, 'update']);
     
-    Route::get('/management/food',[FoodController::class,'index']);
+    Route::get('/management/food',[FoodController::class,'index'])->name('food_control');
     Route::post('/management/food/delete',[FoodController::class, 'delete']);
     Route::post('/management/food/store',[FoodController::class, 'store']);
     Route::post('/management/food/edit',[FoodController::class, 'edit']);

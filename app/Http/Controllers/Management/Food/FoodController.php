@@ -4,22 +4,20 @@ namespace App\Http\Controllers\Management\Food;
 
 use App\Http\Requests\Food\StoreFoodRequest;
 use App\Http\Requests\Food\UpdateFoodRequest;
-use App\Models\Category;
-use App\Models\Food;
 use App\Service\Food\DeleteFood;
 use App\Service\Food\EditFood;
 use App\Service\Food\StoreFood;
 use App\Service\Food\UpdateFood;
+use App\Service\Food\ViewPage;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+
 class FoodController extends Controller
 {
-    public function index()
+    public function index(ViewPage $viewPage)
     {
-        $records = Food::get();
-        $category_data = Category::get()->where('active','1');
-        return view('management.food.index', compact('records','category_data'));
+        return $viewPage->apply();
     }
     public function store(StoreFood $storeFood ,StoreFoodRequest $storeFoodRequest)
     {   

@@ -26,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($records as $key => $record)
+                @foreach ($paginator as $key => $record)
                     <tr id="food_row_{{ $record->id }}">
                         <th scope="row">{{ $key + 1 }}</th>
                         <td class="food_title">{{ $record->title }}</td>
@@ -48,4 +48,5 @@
             </tbody>
         </table>
     </div>
+@include('management.partials.paginator')
 @endsection
